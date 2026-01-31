@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // REST Assured
+    testImplementation 'io.rest-assured:rest-assured:5.4.0'
+
+    // TestNG
+    testImplementation 'org.testng:testng:7.9.0'
+
+    // JSON Schema Validation (optional)
+    testImplementation 'io.rest-assured:json-schema-validator:5.4.0'
+
+    // Gson (optional)
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/testng.xml'
+    }
+}
